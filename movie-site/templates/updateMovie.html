@@ -1,0 +1,51 @@
+{% extends "/layout/lay.html" %}
+{% block body %}
+    <form action="/update-movie/{{movie["id"]}}" method="POST">
+        <div class="form-group">
+          <label for="movie">movie name:</label>
+          <input type="text" class="form-control" id="movie" placeholder="movie name" value={{movie["name"]}} name="movie_name">
+        </div>
+        <div class="form-group">
+          <label for="pwd">year:</label>
+          <input type="number" class="form-control" id="pwd" placeholder="movie year" value={{movie["year"]}} name="movie_year">
+        </div>
+        <div class="form-group form-check">
+          <label class="form-check-label">
+        </div>
+      <div class="form-group">
+        <label for="description">descreption:</label>
+        <input type="text" class="form-control" id="descreption" placeholder="movie description" value={{movie["description"]}} name="movie_descreption">
+      </div>
+      <div class="form-group form-check">
+        <label class="form-check-label">
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect2">type of movie</label>
+        <select class="form-control" id="exampleFormControlSelect2" name = "movie_type" value={{movie["typeofMovie"]}}>
+          <option>action</optn>
+          <option>anime</option>
+          <option>crime</option>
+          <option>family</option>
+          <option>horror</option>
+          <option>romance</optn>
+          <option>thriller</option>
+          <option>drama</option>
+          <option>adventure</option>
+          <option>biography</option>
+          <option>fantasy</optn>
+          <option>musical</option>
+          <option>sci-fy</option>
+          <option>war</option>
+          <option>animation</option>
+          <option>comedy</optn>
+          <option>documental</option>
+          <option>history</option>
+          <option>mystery</option>
+          <option>sport</option>
+          <option>western</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">update</button>
+    </form>
+
+{% endblock %}

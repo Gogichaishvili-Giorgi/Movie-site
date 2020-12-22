@@ -1,0 +1,20 @@
+{% extends "/layout/lay.html" %}
+{% block body %}
+    
+    {% for value in movies %}
+    
+      <div class="card" style="width:400px">
+        <img class="card-img-top" src="https://image.shutterstock.com/image-photo/photo-old-movie-projector-260nw-92369284.jpg" alt="Card image" style="width:100%">
+        <div class="card-body">
+            <h4 class="card-title">{{value["name"]}}</h4>
+            <p class="card-text">{{value["year"]}}</p>
+            <p class="card-text">{{value["description"]}}</p>
+        <a href="/movie/{{value['id']}}" class="btn btn-primary">See movie</a>
+        <a class="btn btn-danger" href="/delete-movie/{{value['id']}}">delete</a>
+        <a class="btn btn-danger" href="/movie/update/{{value['id']}}">update</a>
+        </div>    
+    {% endfor %}
+{% endblock %}
+    
+
+
